@@ -5,8 +5,6 @@ This repo uses the [Vonage Voice API](https://developer.vonage.com/en/voice/voic
 2. Connecting a Caller to an Agent
 3. Playing Hold Music
 
-Learn more about the Voice API with this tutorial. The tutorial goes into more detail about the example code in this repo and provides supplemental information to help you out. TODO: Add link once published
-
 # How To Get This Code Running
 
 ## Prerequsites
