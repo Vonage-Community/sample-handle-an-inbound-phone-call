@@ -15,32 +15,12 @@ This repo uses the [Vonage Voice API](https://developer.vonage.com/en/voice/voic
 
 ## Setup
 
-### Create a Vonage account and purchase a number
-
-You will need a [Vonage API account](https://ui.idp.vonage.com/ui/auth/registration) and a virtual phone number. You can purchase a number from the [developer dashboard](https://dashboard.vonage.com/numbers/buy-numbers). Make sure to buy a number in your country code and with the appropriate features.
-
-### Create a Voice API application and link your number to it
-
-Create your Voice API application in the [developer dashboard](https://dashboard.vonage.com/applications) by navigating to the **Applications** window from the left hand menu and clicking the “Create new application” button. This will open the application creation menu. Give your application the name `inbound-call`.
-
-Under the Capabilities section, toggle the option for **Voice**, which will reveal a list of text fields. In the text field labeled **Answer URL**, provide the ngrok public URL amended with the webhook you defined in your FastAPI app. This will look something like: `https://96b34a48a639.ngrok-free.app/webhooks/answer`.
-
-Click the “Generate new application” button.
-
-![A screenshot of the Create an application menu in the Vonage developer dashboard.](images/2026-02_screenshot_handle-inbound-call_create-application.png)
-
-Now that your application has been created, you can link your number to it by clicking on the **Link** button in the table of available numbers. Your application is now ready to answer inbound calls. The scenarios we will code tell the application what to do when the `/answer` webhook is called.
-
 ### Create an account with ngrok and install it
 The Voice API must be able to access your webhook so that it can make requests to it, therefore, the endpoint URL must be accessible over the public internet.
 
 In order to do that for this tutorial, we will use [ngrok](https://ngrok.com/). Check out our [ngrok tutorial](https://developer.vonage.com/en/blog/local-development-nexmo-ngrok-tunnel-dr/) to learn how to install and use it.
 
-## Run the code
-
-### 1. Spin up an ngrok tunnel
-
-The Voice API must be able to access your webhook so that it can make requests to it. In order to do this, the endpoint URL must be exposed to the public internet. This is what ngrok is for.
+### Spin up an ngrok tunnel
 
 In a separate terminal window, run:
 
@@ -51,19 +31,37 @@ ngrok http 3000
 This command will generate the public URLs your local server will tunnel to on port 3000. Take note of the public URL – it should look something like this:
 
 ```bash
-Forwarding                	https://0a6ec0a950eb.ngrok-free.app -> http://localhost:3000
+Forwarding                	https://some-public-url.ngrok-free.app -> http://localhost:3000
 ```
 
-### 2. Create and activate a Python virtual environment
+### Create a Vonage account and purchase a number
+
+You will need a [Vonage API account](https://ui.idp.vonage.com/ui/auth/registration) and a virtual phone number. You can purchase a number from the [developer dashboard](https://dashboard.vonage.com/numbers/buy-numbers). Make sure to buy a number in your country code and with the appropriate features.
+
+### Create a Voice API application and link your number to it
+
+Create your Voice API application in the [developer dashboard](https://dashboard.vonage.com/applications) by navigating to the **Applications** window from the left hand menu and clicking the “Create new application” button. This will open the application creation menu. Give your application the name `inbound-call`.
+
+Under the Capabilities section, toggle the option for **Voice**, which will reveal a list of text fields. In the text field labeled **Answer URL**, provide the ngrok public URL amended with the webhook defined in the FastAPI app. This will look something like: `https://some-public-url.ngrok-free.app/webhooks/answer`.
+
+Click the “Generate new application” button.
+
+![A screenshot of the Create an application menu in the Vonage developer dashboard.](images/2026-02_screenshot_handle-inbound-call_create-application.png)
+
+Now that your application has been created, you can link your number to it by clicking on the **Link** button in the table of available numbers. Your application is now ready to answer inbound calls. The scenarios we will code tell the application what to do when the `/answer` webhook is called.
+
+## Run the code
+
+### 1. Create and activate a Python virtual environment
 
 ```
 python3 -m venv venv && source venv/bin/activate
 ```
-### 3. Install dependencies
+### 2. Install dependencies
 ```
 pip install -r requirements.txt
 ```
-### 4. Generate and add your application ID and private key to your environment variables
+### 3. Generate and add your application ID and private key to your environment variables
 
 In the developer dashboard [Applications menu](https://dashboard.vonage.com/applications), click on the `send-sms` application and then click **Edit**. Once the edit window opens, click on the button that says, “Generate public and private key”. This will trigger a download of your private key as a file with the extension `.key`. **Keep this file private and do not share it anywhere it could be compromised.**
 
