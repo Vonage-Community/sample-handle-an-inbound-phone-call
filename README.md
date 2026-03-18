@@ -15,11 +15,11 @@ This repo uses the [Vonage Voice API](https://developer.vonage.com/en/voice/voic
 
 ## Setup
 
-### Create a Vonage account, purchase a number, and make sure you’re using the right API
+### Create a Vonage account and purchase a number
 
 You will need a [Vonage API account](https://ui.idp.vonage.com/ui/auth/registration) and a virtual phone number. You can purchase a number from the [developer dashboard](https://dashboard.vonage.com/numbers/buy-numbers). Make sure to buy a number in your country code and with the appropriate features.
 
-## Create a Voice API application and link your number to it
+### Create a Voice API application and link your number to it
 
 Create your Voice API application in the [developer dashboard](https://dashboard.vonage.com/applications) by navigating to the **Applications** window from the left hand menu and clicking the “Create new application” button. This will open the application creation menu. Give your application the name `inbound-call`.
 
