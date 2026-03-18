@@ -63,7 +63,7 @@ pip install -r requirements.txt
 ```
 ### 3. Generate and add your application ID and private key to your environment variables
 
-In the developer dashboard [Applications menu](https://dashboard.vonage.com/applications), click on the `send-sms` application and then click **Edit**. Once the edit window opens, click on the button that says, “Generate public and private key”. This will trigger a download of your private key as a file with the extension `.key`. **Keep this file private and do not share it anywhere it could be compromised.**
+In the developer dashboard [Applications menu](https://dashboard.vonage.com/applications), click on the `inbound-call` application and then click **Edit**. Once the edit window opens, click on the button that says, “Generate public and private key”. This will trigger a download of your private key as a file with the extension `.key`. **Keep this file private and do not share it anywhere it could be compromised.**
 
 Click on the "Save changes button" and also note your Application ID.
 
