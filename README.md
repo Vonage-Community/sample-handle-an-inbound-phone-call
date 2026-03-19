@@ -5,9 +5,13 @@ This repo uses the [Vonage Voice API](https://developer.vonage.com/en/voice/voic
 2. Connecting a Caller to an Agent
 3. Playing Hold Music
 
+## Learn more
+
+For more in-depth information about Vonage and the technology used within this repo, read the [accompanying tutorial](https://vonage.dev/4snBVnZ).
+
 # How To Get This Code Running
 
-## Prerequsites
+## Prerequisites
 - Python 3.8+
 - A [Vonage API account](https://ui.idp.vonage.com/ui/auth/registration)
 - An [ngrok account and installation](https://developer.vonage.com/en/blog/local-development-nexmo-ngrok-tunnel-dr/)
